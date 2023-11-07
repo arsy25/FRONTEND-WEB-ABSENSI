@@ -1,5 +1,5 @@
 <template>
-  <q-page class="flex flex-center"> </q-page>
+  <q-page class="q-pa-md bg-white"> ini dashboard </q-page>
 </template>
 
 <script>
