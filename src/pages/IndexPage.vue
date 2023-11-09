@@ -1,9 +1,3 @@
 <template>
-  <q-page class="q-pa-md bg-white"> ini dashboard </q-page>
+  <q-page></q-page>
 </template>
-
-<script>
-export default {
-  name: "IndexPage",
-};
-</script>

@@ -38,18 +38,17 @@
           >
             <q-item class="q-mb-md">
               <q-item-section side>
-                <q-avatar rounded size="48px">
-                  <img src="images/demeter.jpg" />
-                  <q-badge floating color="light-green"></q-badge>
+                <q-avatar rounded size="55px">
+                  <img src="images/avaadmin.jpg" />
                 </q-avatar>
               </q-item-section>
               <q-item-section>
                 <q-item-label class="text-white text-weight-bold"
-                  >DEMETER</q-item-label
+                  >ADMINISTRATOR</q-item-label
                 >
-                <q-item-label caption class="text-white"
-                  ><q-badge color="green-9"
-                    >superadmin@gmail.com</q-badge
+                <q-item-label caption
+                  ><q-badge style="background: #91c8e4"
+                    >administrator@gmail.com</q-badge
                   ></q-item-label
                 >
               </q-item-section>
@@ -57,6 +56,11 @@
           </q-card>
         </q-item-label>
 
+        <q-item clickable :to="{ name: dashboard }">
+          <q-item-section class="textmenutitle" style="margin-left: 21%"
+            >Dashboard</q-item-section
+          >
+        </q-item>
         <q-expansion-item expand-separator>
           <template v-slot:header>
             <q-item-section avatar>
