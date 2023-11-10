@@ -5,7 +5,18 @@ const routes = [
     children: [
       {
         path: "/",
+        name: "dashboard",
         component: () => import("pages/ADMIN/IndexPage.vue"),
+      },
+      {
+        path: "/",
+        name: "addguru",
+        component: () => import("pages/ADMIN/GURU/AddGuru.vue"),
+      },
+      {
+        path: "/",
+        name: "tableguru",
+        component: () => import("pages/ADMIN/GURU/TableGuru.vue"),
       },
     ],
   },
@@ -17,7 +28,7 @@ const routes = [
     component: () => import("pages/ErrorNotFound.vue"),
   },
   {
-    path: "/",
+    path: "/abc",
     component: () => import("pages/IndexPage.vue"),
   },
 ];

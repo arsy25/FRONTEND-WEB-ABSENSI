@@ -1,12 +1,8 @@
 <template>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-  />
   <q-layout view="lHh Lpr lFf" class="bglay">
-    <q-header none style="background: transparent; color: #91c8e4">
+    <q-header none style="background: #191825; color: #91c8e4">
       <!--ini toolbarnya-->
-      <div class="row q-pa-md flex flex-center">
+      <q-toolbar class="row q-pa-md flex flex-center">
         <div class="col title">ABSENSI</div>
         <q-icon
           class="flex flex-center cursor-pointer"
@@ -16,16 +12,10 @@
           :size="size"
           @click="drawer = !drawer"
         ></q-icon>
-      </div>
+      </q-toolbar>
     </q-header>
 
-    <q-drawer
-      v-model="drawer"
-      :mini="miniState"
-      @mouseover="miniState = false"
-      :width="300"
-      class="menulogo"
-    >
+    <q-drawer v-model="drawer" :width="300" class="menulogo">
       <q-list class="q-gutter-md">
         <q-item-label header>
           <q-card
@@ -56,7 +46,7 @@
           </q-card>
         </q-item-label>
 
-        <q-item clickable :to="{ name: dashboard }">
+        <q-item clickable :to="{ name: 'dashboard' }">
           <q-item-section class="textmenutitle" style="margin-left: 21%"
             >Dashboard</q-item-section
           >
@@ -77,7 +67,7 @@
 
           <q-item
             clickable
-            :to="{ name: 'guru' }"
+            :to="{ name: 'tableguru' }"
             v-ripple
             style="background: #232135"
           >
@@ -87,7 +77,7 @@
           </q-item>
           <q-item
             clickable
-            :to="{ name: 'add_guru' }"
+            :to="{ name: 'addguru' }"
             v-ripple
             style="background: #232135"
           >
@@ -186,7 +176,6 @@ export default {
   data() {
     return {
       drawer: false,
-      miniState: true,
     };
   },
 };

@@ -142,25 +142,7 @@
                     <q-item clickable v-ripple>
                       <q-item-section>
                         <q-item-label caption class="text-caption text-black"
-                          >Total pengguna</q-item-label
-                        >
-                        <q-item-label
-                          caption
-                          style="font-size: 25px"
-                          class="text-weight-bold q-mb-xs text-uppercase text-black"
-                          >9999999999</q-item-label
-                        >
-                      </q-item-section>
-                    </q-item>
-                  </q-card>
-                </div>
-
-                <div class="col">
-                  <q-card class="my-card bg-positive" flat>
-                    <q-item clickable v-ripple>
-                      <q-item-section>
-                        <q-item-label caption class="text-caption text-black"
-                          >Total pengguna</q-item-label
+                          >Total Guru</q-item-label
                         >
                         <q-item-label
                           caption
@@ -178,7 +160,7 @@
                     <q-item clickable v-ripple>
                       <q-item-section>
                         <q-item-label caption class="text-caption text-black"
-                          >Total pengguna</q-item-label
+                          >Total Siswa</q-item-label
                         >
                         <q-item-label
                           caption
@@ -196,25 +178,7 @@
                     <q-item clickable v-ripple>
                       <q-item-section>
                         <q-item-label caption class="text-caption text-black"
-                          >Total pengguna</q-item-label
-                        >
-                        <q-item-label
-                          caption
-                          style="font-size: 25px"
-                          class="text-weight-bold q-mb-xs text-uppercase text-black"
-                          >1000</q-item-label
-                        >
-                      </q-item-section>
-                    </q-item>
-                  </q-card>
-                </div>
-
-                <div class="col">
-                  <q-card class="my-card bg-positive" flat>
-                    <q-item clickable v-ripple>
-                      <q-item-section>
-                        <q-item-label caption class="text-caption text-black"
-                          >Total pengguna</q-item-label
+                          >Total Alat</q-item-label
                         >
                         <q-item-label
                           caption
@@ -233,10 +197,10 @@
       </div>
     </q-card>
 
-    <q-card class="q-pa-md row flex flex-center">
-      <BarChart />
-      <DonutChart />
-    </q-card>
+    <div class="row q-gutter-md">
+      <q-card class="flex flex-center col q-pa-md"><BarChart /></q-card>
+      <q-card class="flex flex-center col"><DonutChart /></q-card>
+    </div>
     <!-- <ChartLine /> -->
   </q-page>
 </template>

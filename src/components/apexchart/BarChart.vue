@@ -1,7 +1,7 @@
 <template>
   <BarChart
     height="300"
-    width="660"
+    width="400"
     type="bar"
     :options="options"
     :series="series"
@@ -19,7 +19,7 @@ export default {
     return {
       options: {
         title: {
-          text: "Data Instansi",
+          text: "Data Absensi",
           align: "left",
           style: {
             color: "#91c8e4",
