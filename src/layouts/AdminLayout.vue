@@ -103,7 +103,7 @@
 
           <q-item
             clickable
-            :to="{ name: 'siswa' }"
+            :to="{ name: 'tablesiswa' }"
             v-ripple
             style="background: #232135"
           >
@@ -113,7 +113,7 @@
           </q-item>
           <q-item
             clickable
-            :to="{ name: 'add_siswa' }"
+            :to="{ name: 'addsiswa' }"
             v-ripple
             style="background: #232135"
           >

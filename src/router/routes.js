@@ -18,6 +18,16 @@ const routes = [
         name: "tableguru",
         component: () => import("pages/ADMIN/GURU/TableGuru.vue"),
       },
+      {
+        path: "/",
+        name: "tablesiswa",
+        component: () => import("pages/ADMIN/SISWA/TableSiswa.vue"),
+      },
+      {
+        path: "/",
+        name: "addsiswa",
+        component: () => import("pages/ADMIN/SISWA/AddSiswa.vue"),
+      },
     ],
   },
 
