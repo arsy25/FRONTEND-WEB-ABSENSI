@@ -1,79 +1,98 @@
 <template>
   <q-page class="q-pa-md">
     <q-card class="q-pa-md q-mb-md" v-if="$q.platform.is.desktop">
-      <div class="text-weight-bold text-h3">HALAMAN SUPERADMIN</div>
-    </q-card>
-    <q-card class="q-pa-md q-mb-md" v-if="$q.platform.is.mobile">
-      <div class="text-weight-bold text-h5">HALAMAN SUPERADMIN</div>
+      <div class="text-weight-bold text-h5">Halaman penambahan Guru</div>
+      <div class="text-blue-5">Silahkan tambahkan data Guru</div>
     </q-card>
     <q-card class="q-pa-md">
-      <div class="text-weight-bold">
-        <div class="text-weight-bold text-h6">FORM PENDAFTARAN ADMIN</div>
-        <div class="q-pt-md">
-          Super-Admin has the privileges to recruit Admin here.
-        </div>
+      <div class="text-h6 text-weight-bold">Form pendaftaran</div>
+      <div class="text-blue-5">
+        Selalu cek data Guru dengan tepat agar tidak terjadi kesalahan pengisian
+        data
       </div>
       <q-form @submit="onSubmit">
         <div class="q-mt-md items-start row q-col-gutter-md">
           <div class="q-col-xs-12 q-col-md-4">
             <q-input
-              class="col-4"
-              color="teal"
-              filled
-              outlined
+              class="col"
+              color="blue"
+              standout="bg-blue-5 text-white"
+              dense
               v-model="form.NAMA"
-              label="Nama Admin"
+              label="Nama Guru"
             >
               <template v-slot:prepend>
-                <q-icon name="category" />
+                <q-icon name="person" />
               </template>
             </q-input>
           </div>
           <div class="q-col-xs-12 q-col-md-4">
             <q-input
-              class="col-4"
+              class="col"
               color="teal"
-              filled
-              outlined
+              standout="bg-blue-5 text-white"
+              dense
               v-model="form.NOMOR_TELEPON"
               label="No Telepon"
+              mask="#############"
             >
               <template v-slot:prepend>
-                <q-icon name="scale" />
+                <q-icon name="phone" />
               </template>
             </q-input>
           </div>
           <div class="q-col-xs-12 q-col-md-4">
             <q-input
-              class="col-4"
+              class="col"
               color="teal"
-              filled
-              outlined
+              standout="bg-blue-5 text-white"
+              dense
               v-model="form.ALAMAT"
               label="Alamat"
             >
               <template v-slot:prepend>
-                <q-icon name="savings" />
+                <q-icon name="map" />
               </template>
             </q-input>
           </div>
           <div class="q-col-xs-12 q-col-md-4">
             <q-input
-              class="col-4"
+              class="col"
               color="teal"
-              filled
-              outlined
-              v-model="form.PASSWORD"
-              label="password"
+              standout="bg-blue-5 text-white"
+              dense
+              v-model="form.NIK"
+              label="NIK"
+              mask="################"
             >
               <template v-slot:prepend>
-                <q-icon name="paid" />
+                <q-icon name="person" />
+              </template>
+            </q-input>
+          </div>
+          <div class="q-col-xs-12 q-col-md-4">
+            <q-input
+              class="col"
+              color="teal"
+              standout="bg-blue-5 text-white"
+              dense
+              :type="isPwd ? 'password' : 'text'"
+              hint="Silahkan isi password yang kuat"
+              v-model="form.PASSWORD"
+              label="Password"
+            >
+              <template v-slot:append>
+                <q-icon
+                  :name="isPwd ? 'visibility_off' : 'visibility'"
+                  class="cursor-pointer"
+                  @click="isPwd = !isPwd"
+                />
               </template>
             </q-input>
           </div>
         </div>
         <div class="q-mt-md">
-          <q-btn label="Submit" type="submit" color="primary" />
+          <q-btn label="Submit" type="submit" color="blue-5 text-black" />
         </div> </q-form
     ></q-card>
   </q-page>
@@ -86,6 +105,8 @@ const model = () => {
     PASSWORD: null,
     NOMOR_TELEPON: null,
     ALAMAT: null,
+    NIK: null,
+    isPwd: true,
   };
 };
 export default {
@@ -94,6 +115,7 @@ export default {
   data() {
     return {
       form: model(),
+      isPwd: true,
     };
   },
   methods: {
@@ -103,7 +125,7 @@ export default {
     async onCreate() {
       // console.log(this.form)
       await this.$axios
-        .post("admin/create", this.form)
+        .post("guru/create", this.form)
         .finally()
         .then((response) => {
           if (!this.$parseResponse(response.data)) {

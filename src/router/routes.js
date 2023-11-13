@@ -31,6 +31,17 @@ const routes = [
     path: "/abc",
     component: () => import("pages/IndexPage.vue"),
   },
+
+  {
+    path: "/",
+    component: () => import("layouts/LoginAdmin.vue"),
+    children: [
+      {
+        path: "/login_admin",
+        component: () => import("pages/LOGIN/AdminLogin.vue"),
+      },
+    ],
+  },
 ];
 
 export default routes;
